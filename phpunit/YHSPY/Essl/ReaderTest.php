@@ -1,6 +1,6 @@
 <?php
 
-namespace YHSPY\PHPUnit\Essl;
+namespace YHSPY\EsslUnit;
 
 use PHPUnit\Framework\TestCase;
 use YHSPY\Essl\Reader;

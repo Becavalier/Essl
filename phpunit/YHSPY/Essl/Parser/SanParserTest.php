@@ -1,6 +1,6 @@
 <?php
 
-namespace YHSPY\PHPUnit\Essl\Parser;
+namespace YHSPY\EsslUnit\Essl\Parser;
 
 use PHPUnit\Framework\TestCase;
 use YHSPY\Essl\Parser\SanParser;

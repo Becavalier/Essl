@@ -10,8 +10,6 @@
         "homepage": "https://www.yhspy.com/"
     }],
 
-    "license": "MIT",
-
     "support": {
         "email": "yhorg@hotmail.com",
         "issues": "https://github.com/Becavalier/Essl/issues"
@@ -36,8 +34,12 @@
 
     "autoload-dev": {
         "psr-4": {
-            "YHSPY\\PHPUnit\\Essl\\": "phpunit/YHSPY/Essl"
+            "YHSPY\\EsslUnit\\": "phpunit/YHSPY/Essl"
         }
-    }
+    },
+
+    "config": {  
+        "secure-http": false  
+    }  
 
 }
