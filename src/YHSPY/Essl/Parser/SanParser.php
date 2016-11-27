@@ -1,6 +1,6 @@
 <?php
 
-namespace Punkstar\Ssl\Parser;
+namespace YHSPY\Essl\Parser;
 
 class SanParser
 {

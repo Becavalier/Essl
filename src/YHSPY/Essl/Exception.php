@@ -1,6 +1,6 @@
 <?php
 
-namespace Punkstar\Ssl;
+namespace YHSPY\Essl;
 
 class Exception extends \Exception
 {

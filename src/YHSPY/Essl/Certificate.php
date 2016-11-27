@@ -1,9 +1,9 @@
 <?php
 
-namespace Punkstar\Ssl;
+namespace YHSPY\Essl;
 
 use DateTime;
-use Punkstar\Ssl\Parser\SanParser;
+use YHSPY\Essl\Parser\SanParser;
 
 class Certificate
 {
