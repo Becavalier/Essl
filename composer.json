@@ -1,0 +1,43 @@
+{
+    "name": "YHSPY/Essl",
+    "description": "A php library for analyzing ssl certificates from website base on X.509 protocol.",
+    "license": "MIT",
+    "keywords": ["ssl", "https", "certificate"],
+
+    "authors": [{
+        "name": "YHSPY",
+        "email": "yhorg@hotmail.com",
+        "homepage": "https://www.yhspy.com/"
+    }],
+
+    "license": "MIT",
+
+    "support": {
+        "email": "yhorg@hotmail.com",
+        "issues": "https://github.com/Becavalier/Essl/issues"
+    },
+
+    "require": {
+        "php": "^7.0",
+        "lib-openssl": "*"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "^5",
+        "php-vfs/php-vfs": "^1.3"
+    },
+
+
+    "autoload": {
+        "psr-4": {
+            "YHSPY\\Essl\\": "src/YHSPY/Essl"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "YHSPY\\PHPUnit\\Essl\\": "phpunit/YHSPY/Essl"
+        }
+    }
+
+}
