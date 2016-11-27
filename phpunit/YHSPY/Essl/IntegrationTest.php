@@ -48,13 +48,13 @@ class IntegrationTest extends TestCase
     public function testUrlReading()
     {
         $reader = new Reader();
-        $cert = $reader->readFromUrl("https://google.com");
+        $cert = $reader->readFromUrl("https://www.baidu.com");
         $this->assertInstanceOf("Punkstar\\Ssl\\Certificate", $cert);
     }
 
     public function exampleCertsDataProvider()
     {
-        $certs = glob(__DIR__ . "/../../../certificates/*");
+        $certs = glob(__DIR__ . "/../../../certs/*");
         $dataProvider = [];
 
         foreach ($certs as $cert) {

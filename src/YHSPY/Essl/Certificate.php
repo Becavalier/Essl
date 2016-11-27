@@ -3,6 +3,7 @@
 namespace YHSPY\Essl;
 
 use DateTime;
+use YHSPY\Essl\Exception;
 use YHSPY\Essl\Parser\SanParser;
 
 class Certificate

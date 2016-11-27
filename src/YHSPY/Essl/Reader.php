@@ -2,6 +2,8 @@
 
 namespace YHSPY\Essl;
 
+use YHSPY\Essl\Exception;
+
 class Reader
 {
     const CONNECTION_TIMEOUT = 30;

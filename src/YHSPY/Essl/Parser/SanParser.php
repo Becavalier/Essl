@@ -2,6 +2,8 @@
 
 namespace YHSPY\Essl\Parser;
 
+use YHSPY\Essl\Exception;
+
 class SanParser
 {
     /**
