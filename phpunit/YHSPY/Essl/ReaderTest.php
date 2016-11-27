@@ -10,7 +10,7 @@ class ReaderTest extends TestCase
 {
     /**
      * @test
-     * @expectedException \Punkstar\Ssl\Exception
+     * @expectedException \YHSPY\Essl\Exception
      * @expectedExceptionCode 1001
      */
     public function testFileNotFound()
@@ -21,7 +21,7 @@ class ReaderTest extends TestCase
 
     /**
      * @test
-     * @expectedException \Punkstar\Ssl\Exception
+     * @expectedException \YHSPY\Essl\Exception
      * @expectedExceptionCode 2001
      */
     public function testJunkCert()

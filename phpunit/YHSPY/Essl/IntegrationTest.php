@@ -49,7 +49,7 @@ class IntegrationTest extends TestCase
     {
         $reader = new Reader();
         $cert = $reader->readFromUrl("https://www.baidu.com");
-        $this->assertInstanceOf("Punkstar\\Ssl\\Certificate", $cert);
+        $this->assertInstanceOf("YHSPY\\Essl\\Certificate", $cert);
     }
 
     public function exampleCertsDataProvider()
