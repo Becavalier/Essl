@@ -39,7 +39,7 @@ class Certificate
     /**
      * @return boolean
      */
-    public function validateCert($domain)
+    public function validateCert($domain = null)
     {
         // Validate expired time
         if($this->validTo()->getTimestamp() < time()) 
@@ -48,9 +48,9 @@ class Certificate
         }
 
         // Validete valid domains
-        if(isset($this->attach->domain) && !empty($this->attach->domain))
+        if(isset($this->attach['domain']) && !empty($this->attach['domain']))
         {
-            $host = $this->attach->domain;
+            $host = $this->attach['domain'];
         }
         else
         {
@@ -62,7 +62,7 @@ class Certificate
             throw new Exception("Invalid host, please provide a valid host name for validation.", Exception::INVALID_HOST);
         }
 
-        if(!in_array($host, $certificate->sans()))  
+        if(!in_array($host, $this->sans()))  
         {
             $hosts = explode(".", $host);
             if(count($hosts) > 2)
@@ -74,7 +74,7 @@ class Certificate
                 $host = "*." . $host;
             }
 
-            if(!in_array($host, $certificate->sans()))  
+            if(!in_array($host, $this->sans()))  
             {
                 return false;
             }
