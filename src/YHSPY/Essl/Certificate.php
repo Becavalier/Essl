@@ -22,7 +22,7 @@ class Certificate
      * @param string $certificate
      * @param SanParser $sanParser
      */
-    public function __construct($certificate, SanParser $sanParser = null)
+    public function __construct($certificate, $attach = null, SanParser $sanParser = null)
     {
         if ($sanParser === null) {
             $sanParser = new SanParser();
@@ -33,6 +33,54 @@ class Certificate
         $this->rawCert = $certificate;
         $this->certData = $this->extractCertData($certificate);
         $this->sanParser = $sanParser;
+        $this->attach = $attach;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function validateCert($domain)
+    {
+        // Validate expired time
+        if($this->validTo()->getTimestamp() < time()) 
+        {
+            return false;
+        }
+
+        // Validete valid domains
+        if(isset($this->attach->domain) && !empty($this->attach->domain))
+        {
+            $host = $this->attach->domain;
+        }
+        else
+        {
+            $host = $domain;
+        }
+
+        if(empty($host)) 
+        {
+            throw new Exception("Invalid host, please provide a valid host name for validation.", Exception::INVALID_HOST);
+        }
+
+        if(!in_array($host, $certificate->sans()))  
+        {
+            $hosts = explode(".", $host);
+            if(count($hosts) > 2)
+            {
+                $host = "*." . $hosts[count($hosts) - 2] . "." . $hosts[count($hosts) - 1];
+            } 
+            else
+            {
+                $host = "*." . $host;
+            }
+
+            if(!in_array($host, $certificate->sans()))  
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**

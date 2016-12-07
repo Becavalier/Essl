@@ -36,7 +36,7 @@ class Reader
 
             $certResource = $streamParams['options']['ssl']['peer_certificate'];
 
-            return new Certificate($this->certResourceToString($certResource));
+            return new Certificate($this->certResourceToString($certResource), array("domain" => $urlHost));
         } else {
             throw new Exception(sprintf("Unable to connect to %s", $urlHost), Exception::CONNECTION_PROBLEM);
         }

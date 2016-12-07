@@ -9,4 +9,6 @@ class Exception extends \Exception
     const MALFORMED_CERTIFICATE = 2001;
 
     const CONNECTION_PROBLEM = 3001;
+
+    const INVALID_HOST = 4001;
 }

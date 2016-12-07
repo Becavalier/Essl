@@ -17,6 +17,7 @@ class SanParser
         array_walk($results, function(&$item) {
             $item = trim($item);
             $item = str_replace("DNS:", "", $item);
+            $item = strtolower($item);
         });
 
         return $results;
